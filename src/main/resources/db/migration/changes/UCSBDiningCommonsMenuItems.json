@@ -1,69 +1,69 @@
 {
-    "databaseChangeLog": [
-        {
-            "changeSet": {
-                "id": "UCSBDiningcommonsmenuitems-1",
-                "author": "summit",
-                "preConditions": [
-                    {
-                    "onFail": "MARK_RAN"
+  "databaseChangeLog": [
+    {
+      "changeSet": {
+        "id": "UCSBDiningcommonsmenuitems-1",
+        "author": "summit",
+        "preConditions": [
+          {
+            "onFail": "MARK_RAN"
+          },
+          {
+            "not": [
+              {
+                "tableExists": {
+                  "tableName": "UCSBDININGCOMMONSMENUITEMS"
+                }
+              }
+            ]
+          }
+        ],
+        "changes": [
+          {
+            "createTable": {
+              "tableName": "UCSBDININGCOMMONSMENUITEMS",
+              "columns": [
+                {
+                  "column": {
+                    "autoIncrement": true,
+                    "constraints": {
+                      "primaryKey": true,
+                      "primaryKeyName": "UCSBDININGCOMMONSMENUITEMS_PK"
                     },
-                    {
-                    "not": [
-                        {
-                        "tableExists": {
-                            "tableName": "UCSBDININGCOMMONSMENUITEMS"
-                        }
-                        }
-                    ]
+                    "name": "id",
+                    "type": "BIGINT"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "name",
+                    "type": "VARCHAR(255)",
+                    "constraints": {
+                      "nullable": false
                     }
-                ],
-                "changes": [
-                    {
-                        "createTable": {
-                            "tableName": "UCSBDININGCOMMONSMENUITEMS",
-                            "columns": [
-                                {
-                                    "column": {
-                                        "autoIncrement": true,
-                                        "constraints": {
-                                            "primaryKey": true,
-                                            "primaryKeyName": "UCSBDININGCOMMONSMENUITEMS_PK"
-                                        },
-                                        "name": "id",
-                                        "type": "BIGINT"
-                                    }
-                                },
-                                {
-                                    "column": {
-                                        "name": "name",
-                                        "type": "VARCHAR(255)",
-                                        "constraints": {
-                                            "nullable": false
-                                        }
-                                    }
-                                },
-                                {
-                                    "column": {
-                                        "name": "station",
-                                        "type": "VARCHAR(255)"
-                                    }
-                                },
-                                {
-                                    "column": {
-                                        "name": "diningCommonsCode",
-                                        "type": "VARCHAR(100)",
-                                        "constraints": {
-                                            "nullable": false
-                                        }
-                                    }
-                                }      
-                            ]
-                        }
+                  }
+                },
+                {
+                  "column": {
+                    "name": "station",
+                    "type": "VARCHAR(255)"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "diningCommonsCode",
+                    "type": "VARCHAR(100)",
+                    "constraints": {
+                      "nullable": false
                     }
-                ],
-                "tableName": "UCSBDININGCOMMONSMENUITEMS"
+                  }
+                }
+              ]
             }
-        }
-    ]
+          }
+        ],
+        "tableName": "UCSBDININGCOMMONSMENUITEMS"
+      }
+    }
+  ]
 }

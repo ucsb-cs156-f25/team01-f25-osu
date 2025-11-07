@@ -51,7 +51,7 @@
                 },
                 {
                   "column": {
-                    "name": "diningCommonsCode",
+                    "name": "DINING_COMMONS_CODE",
                     "type": "VARCHAR(100)",
                     "constraints": {
                       "nullable": false

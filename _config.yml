@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f25/team01-f25-osu
 owner: ucsb-cs156-f25
 repo_name: team01-f25-osu
-pull_requests: [{"author":{"id":"MDQ6VXNlcjE5NzMxODE5","is_bot":false,"login":"Summit-Haque","name":"Summit Haque"},"headRefName":"45-fix-formatting-error-in-the-json-file","number":46,"title":"Formatting error fixed in UCSBDiningCommonsMenuItems.json file","url":"https://github.com/ucsb-cs156-f25/team01-f25-osu/pull/46"}]
+pull_requests: []

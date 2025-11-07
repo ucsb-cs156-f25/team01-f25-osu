@@ -15,11 +15,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity(name = "ucsbdiningcommonsmenuitems")
 public class UCSBDiningCommonsMenuItems {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    
-    private String diningCommonsCode;
-    private String name;
-    private String station;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private long id;
+
+  private String diningCommonsCode;
+  private String name;
+  private String station;
 }

@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f25/team01-f25-osu
 owner: ucsb-cs156-f25
 repo_name: team01-f25-osu
-pull_requests: []
+pull_requests: [{"author":{"id":"MDQ6VXNlcjE5NzMxODE5","is_bot":false,"login":"Summit-Haque","name":"Summit Haque"},"headRefName":"12-add-delete-endpoint-for-a-specific-record-in-ucsbdiningcommonsmenuitem-table","number":51,"title":"#12 add delete endpoint for a specific record in ucsbdiningcommonsmenuitem table","url":"https://github.com/ucsb-cs156-f25/team01-f25-osu/pull/51"}]

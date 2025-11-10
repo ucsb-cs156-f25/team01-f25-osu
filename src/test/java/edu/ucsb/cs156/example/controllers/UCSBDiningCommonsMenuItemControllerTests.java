@@ -328,6 +328,6 @@ public class UCSBDiningCommonsMenuItemControllerTests extends ControllerTestCase
     // assert
     verify(ucsbDiningCommonsMenuItemsRepository, times(1)).findById(15L);
     Map<String, Object> json = responseToJson(response);
-    assertEquals("UCSBDiningCommonsMenuItem with id 15 not found", json.get("message"));
+    assertEquals("UCSBDiningCommonsMenuItems with id 15 not found", json.get("message"));
   }
 }

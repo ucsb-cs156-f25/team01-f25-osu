@@ -1,0 +1,61 @@
+{
+    "databaseChangeLog": [
+      {
+        "changeSet": {
+          "id": "articles-1",
+          "author": "yourGithubId",
+          "changes": [
+            {
+              "createTable": {
+                "tableName": "articles",
+                "columns": [
+                  {
+                    "column": {
+                      "name": "id",
+                      "type": "BIGINT",
+                      "autoIncrement": true,
+                      "constraints": {
+                        "primaryKey": true,
+                        "nullable": false
+                      }
+                    }
+                  },
+                  {
+                    "column": {
+                      "name": "title",
+                      "type": "VARCHAR(255)"
+                    }
+                  },
+                  {
+                    "column": {
+                      "name": "url",
+                      "type": "VARCHAR(1024)"
+                    }
+                  },
+                  {
+                    "column": {
+                      "name": "explanation",
+                      "type": "TEXT"
+                    }
+                  },
+                  {
+                    "column": {
+                      "name": "email",
+                      "type": "VARCHAR(255)"
+                    }
+                  },
+                  {
+                    "column": {
+                      "name": "date_added",
+                      "type": "TIMESTAMP"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+  

@@ -11,7 +11,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * This is a JPA entity that represents an Article
+ * This is a JPA entity that represents an article
  *
  * <p>An Article contains information about an article, including the title, url, explanation, and
  * email of the person who submitted it.

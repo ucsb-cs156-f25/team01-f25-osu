@@ -1,0 +1,67 @@
+package edu.ucsb.cs156.example.controllers;
+
+import edu.ucsb.cs156.example.entities.Article;
+import edu.ucsb.cs156.example.repositories.ArticlesRepository;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import java.time.LocalDateTime;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+/** This is a REST controller for Articles */
+@Tag(name = "Articles")
+@RequestMapping("/api/articles")
+@RestController
+public class ArticlesController extends ApiController {
+
+  /** The ArticlesRepository is used to interact with the database for Article entities */
+  @Autowired ArticlesRepository articlesRepository;
+
+  /**
+   * This method returns a list of all articles.
+   *
+   * @return a list of all articles
+   */
+  @Operation(summary = "List all articles")
+  @PreAuthorize("hasRole('ROLE_USER')")
+  @GetMapping("/all")
+  public Iterable<Article> allArticles() {
+    Iterable<Article> articles = articlesRepository.findAll();
+    return articles;
+  }
+
+  /**
+   * This method creates a new article. Accessible only to users with the role "ROLE_ADMIN".
+   *
+   * @param title title of the article
+   * @param url url of the article
+   * @param explanation explanation of the article
+   * @param email email of the person who submitted the article
+   * @return the saved article (with its id field set by the database)
+   */
+  @Operation(summary = "Create a new article")
+  @PreAuthorize("hasRole('ROLE_ADMIN')")
+  @PostMapping("/post")
+  public Article postArticle(
+      @Parameter(name = "title") @RequestParam String title,
+      @Parameter(name = "url") @RequestParam String url,
+      @Parameter(name = "explanation") @RequestParam String explanation,
+      @Parameter(name = "email") @RequestParam String email) {
+    Article article = new Article();
+
+    article.setTitle(title);
+    article.setUrl(url);
+    article.setExplanation(explanation);
+    article.setEmail(email);
+    article.setDateAdded(LocalDateTime.now());
+
+    Article savedArticle = articlesRepository.save(article);
+    return savedArticle;
+  }
+}

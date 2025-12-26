@@ -6,4 +6,4 @@ import org.springframework.stereotype.Repository;
 
 /** The RestaurantRepository is a repository for Restaurant entities */
 @Repository
-public interface ArticleRepository extends CrudRepository<Article, Long> {}
+public interface ArticlesRepository extends CrudRepository<Article, Long> {}
